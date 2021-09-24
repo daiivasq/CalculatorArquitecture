@@ -1,0 +1,53 @@
+﻿@model CS.WebApplication.Models.OperationsCalculatorModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Calculator</h2>
+
+<form method="post" action="/Calculator/Index">
+    <table style="width:100%">
+        <tr>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                </div>
+                <input type="text" class="form-control" placeholder="Valor " aria-label="Username" id="Parameter1" name="Parameter1" aria-describedby="basic-addon1">
+
+             
+            </div>
+
+            <div>
+                <select id="Operator" name="Operator" class="form-select" aria-label="Default select example">
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="÷">÷</option>
+                    <option value="/">/</option>
+                    <option value="%">%</option>
+                    <option value="^">^</option>
+                </select>
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                </div>
+                <input type="text" class="form-control" placeholder="Valor" aria-label="Username" id="Parameter2" name="Parameter2" aria-describedby="basic-addon1">
+            </div>
+
+
+
+        </tr>
+
+        <tr>
+            <td><button type="submit" class="btn btn-primary" >Calculate</button> <button type="submit" class="btn btn-warning">Clear</button></td>
+        </tr>
+    </table>
+</form>
+
+@if (Model != null)
+{
+    <h4>@Model.Result</h4>
+}
+
+
+
